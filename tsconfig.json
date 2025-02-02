@@ -6,9 +6,9 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true,
-
+    "resolveJsonModule": true,
     // type alias
     "baseUrl": "./src",
     "paths": {
