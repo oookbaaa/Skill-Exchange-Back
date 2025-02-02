@@ -11,21 +11,19 @@ import cors from "cors";
 import type { Request, Response } from "express";
 import express from "express";
 import helmet from "helmet";
+import mongoose, { mongo } from "mongoose";
 import morgan from "morgan";
 import { Server } from "socket.io";
 import swaggerUi from "swagger-ui-express";
 import { swaggerSpec } from "./config/swaggerConfig";
+import db from "./database/db.json"; // Ensure TypeScript allows JSON imports
 
-const mongo = require("mongoose");
-const db = require("./database/db.json");
-
-mongo
+mongoose
   .connect(db.url)
-  .then(console.log("database connected"))
+  .then(() => console.log("database connected"))
   .catch((err: Error) => {
     console.error("❌ Database connection error:", err.message);
   });
-  
 
 export const app = express();
 
