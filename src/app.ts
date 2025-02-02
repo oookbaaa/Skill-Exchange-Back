@@ -16,7 +16,7 @@ import swaggerUi from "swagger-ui-express";
 import { swaggerSpec } from "./config/swaggerConfig";
 const mongo = require("mongoose");
 
-const db = require("./config/database/db.json");
+const db = require("./database/db.json");
 
 mongo.connect(db.url)
   .then(console.log("database connected"))
